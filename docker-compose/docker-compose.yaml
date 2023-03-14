@@ -24,10 +24,15 @@ services:
       - rede-virtual-1
       - rede-virtual-2
   database:
-    image: betrybe/docker-compose-example-database:v1
+    image: mysql:5.7.41
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
     restart: always
     volumes:
-      - dados-do-banco:/data/db
+      - dados-do-banco:/var/lib/mysql
     networks:
       - rede-virtual-2
     

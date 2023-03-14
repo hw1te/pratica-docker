@@ -1,2 +1,2 @@
-FROM betrybe/docker-compose-example-backend:v1
+FROM node:alpine
 ENTRYPOINT ["npm", "start"]
